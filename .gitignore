@@ -1,0 +1,5 @@
+# Data koneksi database asli jangan ikut ke GitHub
+config.php
+# File sampah
+.DS_Store
+Thumbs.db

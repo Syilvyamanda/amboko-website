@@ -1,0 +1,40 @@
+/* AMBOKO - gaya tambahan di luar Tailwind */
+html { scroll-behavior: smooth; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Marquee / ticker hitam */
+.marquee { overflow: hidden; white-space: nowrap; }
+.marquee__track { display: inline-flex; min-width: 200%; animation: marquee 38s linear infinite; }
+.marquee__group { display: inline-flex; align-items: center; min-width: 50%; justify-content: space-around; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Toast */
+.toast { animation: toastIn .25s ease-out; }
+.toast.is-hiding { opacity: 0; transform: translateY(-6px); transition: all .3s; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+
+/* Kartu miring di Home (sesuai desain: bingkai hitam + label diskon) */
+.tilt-a { transform: rotate(-1.4deg); }
+.tilt-b { transform: rotate(1.6deg); }
+.tilt-c { transform: rotate(-.8deg); }
+.tilt-d { transform: rotate(1.2deg); }
+.tilt-card { transition: transform .25s ease; }
+.tilt-card:hover { transform: rotate(0) translateY(-4px); }
+
+/* Slider harga ganda (katalog) */
+.range-wrap { position: relative; height: 22px; }
+.range-wrap input[type=range] { position: absolute; left: 0; width: 100%; top: 0; height: 22px; margin: 0; pointer-events: none; background: transparent; -webkit-appearance: none; appearance: none; }
+.range-wrap input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; pointer-events: auto; width: 14px; height: 14px; border-radius: 50%; background: #fff; border: 3px solid #000; cursor: pointer; }
+.range-wrap input[type=range]::-moz-range-thumb { pointer-events: auto; width: 8px; height: 8px; border-radius: 50%; background: #fff; border: 3px solid #000; cursor: pointer; }
+.range-wrap input[type=range]::-webkit-slider-runnable-track { background: transparent; }
+.range-track { position: absolute; top: 9px; left: 0; right: 0; height: 4px; background: #d4d4d4; border-radius: 4px; }
+.range-fill { position: absolute; top: 9px; height: 4px; background: #000; border-radius: 4px; }
+
+/* Placeholder ilustrasi "Coming Soon" */
+.coming-soon-art { aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; }
+
+/* Admin */
+.admin-table th { white-space: nowrap; }
+@media print { .no-print { display: none !important; } }
