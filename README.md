@@ -55,15 +55,6 @@ Menu samping dikelompokkan; hak akses tiap administrator diatur di menu **Penggu
 Catatan: Pengaturan, Pengiriman (biaya), dan Metode Pembayaran adalah data master admin; halaman website (checkout, footer, kontak) tidak membacanya.
 Statistik pengunjung di `database_admin.sql` adalah data contoh karena website belum mencatat kunjungan.
 
-## Data dummy pelanggan
-`database_admin.sql` menambah 18 pelanggan sesuai nama pada ulasan produk (11 beli lewat website, 7 beli di toko offline),
-lengkap dengan pesanan, pembayaran, dan ulasan yang tertaut. Pelanggan website bisa login: `<nama>.<belakang>@email.com` / `customer123`
-(contoh `bagas.saputra@email.com`). Pelanggan toko tidak punya email/password.
-
-## Database (tabel baru/berubah)
-`categories`, `products` (diperluas), `product_images`, `product_option_groups`, `product_option_values`,
-`product_relations`, `product_metrics`, `product_reviews`, `wishlists`, `vouchers`, `orders` (diperluas),
-`order_items` (snapshot nama/varian), `order_status_history`, `payments`, `stock_movements`.
 
 ## Hal penting
 * **Pembayaran**: `PAYMENT_SIMULATION = false` di `koneksi.php`. Setelah checkout, pelanggan melihat kode **QRIS** atau nomor **Virtual Account**
@@ -77,6 +68,3 @@ lengkap dengan pesanan, pembayaran, dan ulasan yang tertaut. Pelanggan website b
 * Password lama (plaintext) otomatis diubah menjadi hash saat pemiliknya login.
 * Checkout wajib login (agar pesanan terhubung ke akun).
 
-## Upgrade dari database lama
-Backup dulu, lalu import `database_upgrade.sql` (butuh MariaDB/XAMPP). Akun, pesanan, dan produk lama dipertahankan.
-Foto/varian/ulasan sesuai desain hanya ada di `database.sql` (instalasi baru).
